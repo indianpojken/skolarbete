@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #eeeeee;
+}
+
+:root {
+    --flag-width: 500px;
+    --flag-height: 300px;
+}
+
+.flag {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    margin: calc(50vh - (var(--flag-height) / 2)) auto;
+
+    width: var(--flag-width);
+    height: var(--flag-height);
+}
+
+.flag__red-circle {
+    background-color: #bd1917;
+
+    width: calc(var(--flag-height) / 2);
+    height: calc(var(--flag-height) / 2);
+
+    border-radius: 50%;
+}
