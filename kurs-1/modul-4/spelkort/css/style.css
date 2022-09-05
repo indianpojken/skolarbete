@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.playing-card {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    background-color: #f7f7f7;
+
+    border: solid 8px #fff;
+    border-radius: 8px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+    height: 400px;
+    min-width: 250px;
+
+    margin: 0 20px;
+}
+
+.playing-card p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.hearts, .diamonds {
+    color: #cc3a3d;
+}
+
+.spades, .clubs {
+    color: #000;
+}
+
+.playing-card__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.playing-card__middle {
+    display: flex;
+    align-self: center;
+    margin: auto 0;
+}
+
+.playing-card__middle > .icon {
+    font-size: 80px;
+}
+
+.playing-card__container > .icon {
+    font-size: 30px;
+}
+
+.playing-card__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.playing-card__container {
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playing-card__bottom > .playing-card__container {
+    transform: scale(-1, -1);
+}
