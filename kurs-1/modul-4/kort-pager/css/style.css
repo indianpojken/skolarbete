@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.quotes {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+
+    width: 350px;
+    min-height: 470px;
+
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.qoutes__quote {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.qoutes__quote blockquote {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.qoutes__quote>blockquote::before,
+.qoutes__quote>blockquote::after {
+    content: '"';
+}
+
+.qoutes__quote cite {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    color: #c0b6b6;
+}
+
+.quotes>footer {
+    flex-grow: 0;
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+}
+
+.pager > p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    padding: 0px 7px;
+    margin: 0;
+}
+
+.pager > p:not(.pager__active) {
+    color: #939393;
+}
+
+.pager__active, .pager > p:hover {
+    color: #333333;
+}
