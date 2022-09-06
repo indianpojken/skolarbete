@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eeeeee;
+    margin: 0;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+
+    width: 350px;
+    min-height: 470px;
+
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.profile__header {
+    display: flex;
+    flex-grow: 0;
+    justify-content: flex-end;
+}
+
+.profile__information {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.profile__footer {
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.profile__avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile__name {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.profile__title {
+    color: #939393;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+}
+
+.button {
+    color: #fff;
+    background-color: #333333;
+
+    border: none;
+    border-radius: 40px;
+
+    margin-bottom: 30px;
+    padding: 15px 35px;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #939393;
+}
+
+.button--light {
+    color: #939393;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 24px;
+    margin: 1ex 1em;
+}
+
+.button--light:hover {
+    color: #333333;
+}
