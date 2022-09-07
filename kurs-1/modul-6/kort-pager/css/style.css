@@ -49,11 +49,6 @@ section {
     margin-bottom: 10px;
 }
 
-.qoutes__quote>blockquote::before,
-.qoutes__quote>blockquote::after {
-    content: '"';
-}
-
 .qoutes__quote cite {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
