@@ -35,13 +35,13 @@ section {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.qoutes__quote {
+.quotes_quote {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.qoutes__quote blockquote {
+.quote__text {
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-size: 20px;
@@ -49,14 +49,14 @@ section {
     margin-bottom: 10px;
 }
 
-.qoutes__quote cite {
+.quote__cite {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 16px;
     color: #c0b6b6;
 }
 
-.quotes>footer {
+.quotes__navigation {
     flex-grow: 0;
 }
 
@@ -65,17 +65,18 @@ section {
     justify-content: center;
 }
 
-.pager > p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 50px;
-    padding: 0px 7px;
-    margin: 0;
+.pager__button {
+    width: 11px;
+    height: 11px;
+    background-color: #969696;
+    border-radius: 50%;
+    margin: 1.5em 0.5em;
 }
 
-.pager > p:not(.pager__active) {
-    color: #939393;
+.pager__button:hover {
+    background-color: #333333;
 }
 
-.pager__active, .pager > p:hover {
-    color: #333333;
+.pager__button--active {
+    background-color: #333333;
 }
