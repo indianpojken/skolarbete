@@ -24,16 +24,22 @@ body>header {
 }
 
 .header__menu {
+    align-self: flex-start;
+}
+
+.header__menu-button {
     background-color: #3DE07E;
     border: none;
     margin: 2rem;
-    align-self: flex-start;
+}
+
+.header__logo {
+    margin: auto;
 }
 
 .header__text {
     font-family: 'Roboto', sans-serif;
     font-size: 102px;
-    margin: auto;
 }
 
 .header__image {
