@@ -137,31 +137,28 @@ main {
 }
 
 footer {
-    display: flex;
-    flex-grow: 1;
+    padding-top: 3.7rem;
     background-color: #FFFFFF33;
-    justify-content: space-evenly;
-    margin-top: auto;
     height: 320px;
 }
 
-footer>article {
-    margin-top: 3.7rem;
+footer>section {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .footer__title {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 700;
     font-size: 40px;
-
     color: #fff;
     padding: 0;
     margin: 0 0 1rem 0;
 }
 
 .footer__links {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
 }
 
 .footer__links a {
@@ -197,9 +194,8 @@ footer>article {
 
 .footer__socials>ul {
     display: flex;
-    margin: 0;
+    margin: 0 0 0 2px;
     padding: 0;
-    margin-left: 2px;
     list-style: none;
 }
 
