@@ -38,7 +38,7 @@ body {
     color: #fff;
     background-color: #fe2c2c;
 
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 .calendar > header p {
@@ -54,8 +54,7 @@ body {
     fill: #fff;
     background-color: #fe2c2c;
     border: none;
-    height: 20px;
-    width: 20px;
+    display: flex;
 }
 
 .calendar > header button:hover {
@@ -82,7 +81,8 @@ body {
     gap: 1px;
 
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 32px repeat(5, 64px);
+    grid-template-rows: 32px;
+    grid-auto-rows: 64px;
 }
 
 .calendar__day-name {
