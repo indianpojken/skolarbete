@@ -39,14 +39,11 @@ body {
 
 .navigation ul {
     display: flex;
-
+    
     list-style-type: none;
-
     margin: 0;
-    padding: 0;
-
     height: 100%;
-    gap: 30px;
+    gap: 55px;
 }
 
 .navigation__item {
