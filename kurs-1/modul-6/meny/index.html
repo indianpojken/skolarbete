@@ -1,52 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
+* {
+  box-sizing: border-box;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Meny</title>
-</head>
+body {
+  font-family: 'Fira Sans', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
 
-<body>
-  <header class="menu">
-    <section>
-      <img class="logo" src="./logo-big.svg" alt="Logo" />
-    </section>
+body > header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-    <nav>
-      <ul class="navigation">
-        <li>
-          <a class="navigation__item" href="#">
-            Option 1
-          </a>
-        </li>
+  background-color: #eee;
+  background-image: url("../assets/phone.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
 
-        <li>
-          <a class="navigation__item" href="#">
-            Option 2
-          </a>
-        </li>
+  height: 714px;
+}
 
-        <li>
-          <a class="navigation__item" href="#">
-            Option 3
-          </a>
-        </li>
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eeeeee;
+  max-width: 1440px;
+  width: 100%;
+  padding: 20px 32px;
+}
 
-        <li>
-          <a class="navigation__item" href="#">
-            Option 4
-          </a>
-        </li>
-      </ul>
-    </nav>
+.menu__logo {
+  margin: auto 0;
+}
 
-    <nav class="menu__section-right">
-      <a class="button" href="#">Login</a>
-    </nav>
-  </header>
-</body>
+.navigation ul {
+  display: flex;
 
-</html>
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  gap: 30px;
+}
+
+.navigation__item {
+  font-size: 12px;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  height: 100%;
+  color: #999;
+}
+
+.navigation__item:hover {
+  color: #000;
+}
+
+.navigation__item--current {
+  color: #000;
+}
+
+.menu .button {
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #222222;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: 1px solid #000000;
+  border-radius: 3px;
+
+  padding: 12px 30px;
+}
+
+.menu .button:hover {
+  color: #eeeeee;
+  background-color: #222222;
+}
+
+.hero {
+  display: flex;
+  background-color: #eee;
+}
+
+h1 {
+  font-size: 53px;
+  font-weight: 700;
+  color: #222;
+  margin: 60px 0 0 0;
+}
+
+.hero header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 550px;
+  width: 100%;
+}
+
+.hero > article p {
+  text-align: center;
+  margin: 7px 0 0 0;
+}
+
+.hero a {
+  display: flex;
+  
+  align-items: center;
+
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  background-color: #222;
+
+  color: #fff;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 6px;
+
+  height: 40px;
+  width: 134px;
+
+  padding: 10px 8px;
+  gap: 9px
+}
+
+.hero > article section {
+  margin: 54px 0 0 0;
+  display: flex;
+  gap: 32px;
+}
