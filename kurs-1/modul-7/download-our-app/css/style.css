@@ -168,7 +168,7 @@ body>main .title {
 .products {
     display: grid;
     grid-template-columns: repeat(4, 262px);
-    gap: 30px;
+    gap: 64px 30px;
     margin-bottom: 128px;
 }
 
@@ -266,8 +266,7 @@ body>footer {
 }
 
 .footer__items {
-    display: grid;
-    grid-template-columns: repeat(2, 434px);
+    display: flex;
     justify-content: space-between;
     padding: 69px 210px;
     max-width: 1440px;
@@ -276,11 +275,14 @@ body>footer {
 
 
 .footer__contact-us {
+    border-radius: 3px;
     display: flex;
     padding: 33px 25px;
     flex-direction: column;
     background-color: #fff;
-    grid-column: 2 / span 1;
+    width: 434px;
+    margin-left: auto;
+    overflow: hidden;
 }
 
 .footer__contact-us>header {
