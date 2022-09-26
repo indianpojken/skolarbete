@@ -39,7 +39,7 @@ body {
 
 .navigation ul {
     display: flex;
-    
+
     list-style-type: none;
     margin: 0;
     height: 100%;
