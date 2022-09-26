@@ -14,13 +14,13 @@ body {
     height: 100%;
 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 128px auto 128px;
     grid-template-areas:
-        "header header header header header"
-        "l-sidebar main main main r-sidebar"
-        "footer footer footer footer footer";
-    gap: 20px;
+        "header header header header header header header"
+        "l-sidebar l-sidebar main main main r-sidebar r-sidebar"
+        "footer footer footer footer footer footer footer";
+    gap: 10px;
 }
 
 body header {
@@ -38,7 +38,7 @@ body header {
 .sidebar__item {
     flex: 1;
     background-color: #b2008a;
-    min-height: 32px;
+    min-height: 16px;
 }
 
 body main {
@@ -59,12 +59,17 @@ body footer {
 @media screen and (max-width: 600px) {
     .wrapper {
         grid-template-columns: 1fr;
-        grid-template-rows: 64px auto auto auto 64px;
+        grid-template-rows: 64px auto auto minmax(64px, .25fr) 64px;
         grid-template-areas:
         "header" "l-sidebar" "main" "r-sidebar" "footer";
     }
 
     .left-sidebar {
         gap: 2px;
+        margin: 0 10px;
+    }
+
+    .right-sidebar {
+        margin: 0 10px;
     }
 }
