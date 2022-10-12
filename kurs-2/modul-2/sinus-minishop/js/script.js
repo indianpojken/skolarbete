@@ -18,9 +18,9 @@ document.querySelectorAll('a').forEach((link) => {
 // 4
 document.querySelector('.art-2 > p').innerText = 'The quick brown fox jumps over the lazy dog.';
 
+// 5
 const art2Button = document.querySelector('.art-2 button');
 
-// 5
 art2Button.style.backgroundColor = '#eee';
 art2Button.style.color = '#000';
 
