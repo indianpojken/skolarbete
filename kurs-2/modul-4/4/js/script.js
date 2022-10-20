@@ -6,19 +6,19 @@ let score = {
   computer: 0,
 };
 
+const icon = { rock: '✊', paper: '🤚', scissor: '✌', };
+
+const scoreboard = {
+  player: document.querySelector('#score_player'),
+  computer: document.querySelector('#score_computer'),
+};
+
+const hand = {
+  player: document.querySelector('#hand_player'),
+  computer: document.querySelector('#hand_computer'),
+};
+
 function render(hands) {
-  const icon = { rock: '✊', paper: '🤚', scissor: '✌', };
-
-  const scoreboard = {
-    player: document.querySelector('#score_player'),
-    computer: document.querySelector('#score_computer'),
-  };
-
-  const hand = {
-    player: document.querySelector('#hand_player'),
-    computer: document.querySelector('#hand_computer'),
-  };
-
   scoreboard.player.innerText = score.player;
   scoreboard.computer.innerText = score.computer;
 
@@ -53,8 +53,11 @@ function restart() {
   score.player = 0;
   score.computer = 0;
 
-  document.querySelector('#hand_player').innerText = '🙂';
-  document.querySelector('#hand_computer').innerText = '🤖';
+  scoreboard.player.innerText = score.player;
+  scoreboard.computer.innerText = score.computer;
+
+  hand.player.innerText = '🙂';
+  hand.computer.innerText = '🤖';
 
   document.querySelector('.ui').style.display = 'flex';
   document.querySelector('.hud__hands').style.display = 'flex';
