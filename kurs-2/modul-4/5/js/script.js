@@ -7,7 +7,7 @@ const story = [
     choices: ['First bowl', 'Second bowl', 'Third bowl'],
     replies: [
       'This porridge is too hot!" she exclaimed.',
-      '"This porridge is too cold," she said.',
+      '"This porridge is too cold," she said. \n',
       '"Ahhh, this porridge is just right," she said happily and she ate it all up.'
     ],
     correct: 2,
@@ -98,7 +98,7 @@ function gameLoop(choice) {
       index += 1;
     }
   } else {
-    ui.text.reply.innerText = story[index].replies[choice] ?? '';
+    ui.text.reply.innerText = story[index].replies[choice];
 
     if (choice !== story[index].correct) {
       ui.button[choice].classList.add('hidden');
