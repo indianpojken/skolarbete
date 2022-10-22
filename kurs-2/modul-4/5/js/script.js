@@ -4,7 +4,7 @@ const story = [
     She went for a walk in the forest. Pretty soon, she came upon a house.\n
     She knocked and, when no one answered, she walked right in.\n
     She tasted the porridge from the ...`,
-    choises: ['First bowl', 'Second bowl', 'Third bowl'],
+    choices: ['First bowl', 'Second bowl', 'Third bowl'],
     replies: [
       'This porridge is too hot!" she exclaimed.',
       '"This porridge is too cold," she said.',
@@ -16,7 +16,7 @@ const story = [
     story: `After she'd eaten the three bears' breakfasts, she decided she was feeling a little tired.\n
     So, she walked into the living room where she saw three chairs.\n
     Goldilocks sat in the first chair to rest.`,
-    choises: ['Big chair', 'Small chair', 'Even bigger chair'],
+    choices: ['Big chair', 'Small chair', 'Even bigger chair'],
     replies: [
       'This chair is too big!" she exclaimed.',
       `"Ahhh, this chair is just right," she sighed. \n
@@ -41,9 +41,11 @@ const story = [
     "Someone's been sleeping in my bed and she's still there!" exclaimed the Baby bear.\n
     Just then, Goldilocks woke up. She saw the three bears.
     `,
-    choises: ['Scream "help!" and run', 'Cover in fear', 'Fight'],
+    choices: ['Scream "help!" and run', 'Cover in fear', 'Fight'],
     replies: [
-      '---',
+      `She screamed, "Help!" And she jumped up and ran out of the room.\n
+       Goldilocks ran down the stairs, opened the door, and ran away into the forest.\n
+       She never returned to the home of the three bears.`,
       'Goldilock covered in fear and got killed by the bears.',
       'Goldilock raised her fists and got a hit in, but the bears fought back and killed her.',
     ],
@@ -57,6 +59,7 @@ const ui = {
   text: {
     story: document.querySelector('#story'),
     reply: document.querySelector('#reply'),
+    victory: document.querySelector('#victory_text'),
   },
   button: [
     document.querySelector('#choice_1'),
@@ -65,55 +68,48 @@ const ui = {
   ],
 };
 
-ui.button.forEach((button, i) => {
-  ui.button[i].addEventListener('click', () => { gameLoop(i) });
-});
-
 let index = 0;
-let win = false;
-let wrongChoices = [];
 
 function render() {
   ui.text.story.innerText = story[index].story;
 
   ui.button.forEach((button, i) => {
-    button.innerText = story[index].choises[i];
+    button.innerText = story[index].choices[i];
   });
-
-  wrongChoices.forEach((button) => {
-    ui.button[button].classList.add('hidden');
-  });
-
-  if (win === true) {
-    document.querySelector('.ui').classList.toggle('hidden');
-    document.querySelector('.victory').classList.toggle('hidden');
-  }
 }
 
 function gameLoop(choice) {
-  if (parseInt(choice, 10) === story[index].correct) {
+  if (choice === story[index].correct) {
     if (index + 1 === story.length) {
-      win = true;
-    } else if (index + 1 !== story.length) {
-      wrongChoices = [];
+      ui.text.victory.innerText = story[index].replies[choice];
 
+      document.querySelector('.ui').classList.toggle('hidden');
+      document.querySelector('.victory').classList.toggle('hidden');
+    } else if (index < story.length) {
       ui.button.forEach((button) => {
         button.classList.remove('hidden');
       });
 
       ui.text.reply.innerText = '';
 
+      story[index + 1].story =
+        story[index].replies[choice] + '\n' + story[index + 1].story;
+
       index += 1;
     }
   } else {
     ui.text.reply.innerText = story[index].replies[choice] ?? '';
 
-    if (parseInt(choice, 10) !== story[index].correct) {
-      wrongChoices.push(choice);
+    if (choice !== story[index].correct) {
+      ui.button[choice].classList.add('hidden');
     }
   }
 
   render();
 }
+
+ui.button.forEach((button, i) => {
+  button.addEventListener('click', () => { gameLoop(i) });
+});
 
 render();
