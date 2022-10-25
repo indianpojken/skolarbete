@@ -35,11 +35,10 @@ for (let i = 0; i < products.length; i++) {
 
     if (!shoppingCart.includes(product)) {
       shoppingCart.push(product);
+      updateCart();
     } else {
       alert(`'${product}' is already added to cart.`);
     }
-
-    updateCart();
   });
 }
 
