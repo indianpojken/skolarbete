@@ -57,22 +57,22 @@ function step7() {
 
 step1().then((resp) => {
   console.log(resp);
-  step2().then((resp) => {
-    console.log(resp);
-    step3().then((resp) => {
-      console.log(resp);
-      step4().then((resp) => {
-        console.log(resp);
-        step5().then((resp) => {
-          console.log(resp);
-          step6().then((resp) => {
-            console.log(resp);
-            step7().then((resp) => {
-              console.log(resp);
-            });
-          });
-        });
-      });
-    });
-  });
+  return step2();
+}).then((resp) => {
+  console.log(resp);
+  return step3();
+}).then((resp) => {
+  console.log(resp);
+  return step4();
+}).then((resp) => {
+  console.log(resp);
+  return step5();
+}).then((resp) => {
+  console.log(resp);
+  return step6();
+}).then((resp) => {
+  console.log(resp);
+  return step7();
+}).catch((err) => {
+  console.log(`error: ${err}`);
 });
