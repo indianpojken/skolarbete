@@ -8,7 +8,7 @@ const elements = {
 
 async function fetchImages(query, perPage = 20) {
   const key = 'e3c351965c09374f9905ccd770f3ee2b';
-  const endpoint = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${key}&text=${query}&per_page=${perPage}&format=json&nojsoncallback=1&content_types=0`
+  const endpoint = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${key}&text=${query}&per_page=${perPage}&format=json&nojsoncallback=1&content_types=0&sort=relevance`
 
   try {
     const response = await fetch(endpoint);

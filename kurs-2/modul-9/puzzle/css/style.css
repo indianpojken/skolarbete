@@ -43,8 +43,11 @@ input[type=text] {
 }
 
 .phrase {
-    text-transform: capitalize;
     font-size: 2rem;
+}
+
+section:nth-child(1) .phrase {
+    text-transform: capitalize;
 }
 
 #finish {
