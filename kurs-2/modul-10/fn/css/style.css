@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #171717;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.goals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.goals__goal {
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    border: solid 1px #e5e5e5;
+    padding: 1rem;
+}
+
+.goals__goal--full {
+    flex: 100%;
+}
+
+.goal__code {
+    color: #262626;
+    background-color: #e5e5e5;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    margin-top: 0;
+}
+
+.goal__title {
+    margin: 0.5rem 0;
+}
+
+.goal__description {
+    margin-bottom: 4rem;
+}
+
+.goals__goal > button {
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.goal__targets {
+    margin-bottom: 1rem;
+}
+
+.target {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: #f5f5f5;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.target__code {
+    font-weight: 700;
+}
+
+.button {
+    color: #fafafa;
+    background-color: #171717;
+    border: solid 2px #171717;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    color: #171717;
+    background-color: #fafafa;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin: 0 auto;
+    }
+
+    .goals {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
