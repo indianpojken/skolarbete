@@ -23,13 +23,15 @@ function createGoal(goal) {
   targetsButton.className = 'button';
   targetsButton.textContent = 'Show targets';
 
-  targetsButton.addEventListener('click', async () => {
-    if (targets.className.includes('hidden')) {
+  targetsButton.addEventListener('mouseover', async () => {
+    if (targets.innerHTML === "") {
       for (const target of await fetchTargets(goal.code)) {
         targets.appendChild(createTarget(target));
       }
     }
+  });
 
+  targetsButton.addEventListener('click', () => {
     targetsButton.textContent =
       targets.className.includes('hidden')
         ? "Hide targets"
@@ -37,7 +39,7 @@ function createGoal(goal) {
 
     goalElem.classList.toggle('goals__goal--full');
     targets.classList.toggle('hidden');
-  })
+  });
 
   goalElem.append(code, title, description, targets, targetsButton);
 
