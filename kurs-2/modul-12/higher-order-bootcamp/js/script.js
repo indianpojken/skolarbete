@@ -34,7 +34,7 @@ const people = [
   { age: 55, name: 'Max' },
 ];
 
-const totalAge = people.reduce((total, person) => total += person.age, 0);
+const totalAge = people.reduce((total, person) => total + person.age, 0);
 console.log(totalAge);
 
 // 4
