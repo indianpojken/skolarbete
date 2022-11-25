@@ -1,0 +1,311 @@
+[33mcommit c8302c61a1218cce2163dfdd97029b6ea885f793[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Mon Nov 21 17:05:04 2022 +0100
+
+    higher-order bootcamp
+
+[33mcommit 5f0c9e4de3a97ceb309b8ead0ad0c253efdcf46c[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Fri Nov 18 00:27:16 2022 +0100
+
+    pre-fetch on hover
+
+[33mcommit c14f4920c04d0489d5442892535ab534ab674c4f[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Thu Nov 17 23:52:26 2022 +0100
+
+    add fn
+
+[33mcommit 3c4b07bff7a03fe76290d9ec06e39d15f7b9d01e[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Fri Nov 11 09:05:55 2022 +0100
+
+    small fixes
+
+[33mcommit 02e69248354889a7f92a4fc0de8d6db9a15c6bbb[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Fri Nov 11 08:48:40 2022 +0100
+
+    move folder to correct module
+
+[33mcommit 56482d4d7a6470444cbcf82229b033ca9419496b[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Fri Nov 11 01:26:44 2022 +0100
+
+    puzzle
+
+[33mcommit d948375c9e2337beb6da003b49184aafa2972e1c[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Thu Nov 10 23:37:55 2022 +0100
+
+    add flickr
+
+[33mcommit df050244d81761673377cbd49ea865cff2df0a94[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Wed Nov 9 11:41:46 2022 +0100
+
+    fix chain
+
+[33mcommit cdf0d3fd9739a829a66556d2e9dfce4f9c010f56[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Wed Nov 9 03:27:24 2022 +0100
+
+    async-bootcamp
+
+[33mcommit fca05a2c17b32463f8d4b2bf292d469864607d71[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Wed Oct 26 00:46:41 2022 +0200
+
+    add 2nd solution
+
+[33mcommit 2eb7c2f9fdfed4b55c34d96bc1034c81c66ee31b[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Tue Oct 25 23:09:12 2022 +0200
+
+    add shopping
+
+[33mcommit 117e37826c752bd81b16b4f28f84196485312aac[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Mon Oct 24 23:08:13 2022 +0200
+
+    add insult
+
+[33mcommit 77366fc35f1633725e1381b79c86b7291b391b9f[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sat Oct 22 13:29:15 2022 +0200
+
+    dynamicly add/change buttons
+
+[33mcommit b6209aa1220d2780d20ec8d1cf5719400be5b4ee[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sat Oct 22 13:00:53 2022 +0200
+
+    remove ??
+
+[33mcommit cb779c6f0f4adaee5675174d9baba1408222fe79[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sat Oct 22 12:51:42 2022 +0200
+
+    fix
+
+[33mcommit 320a303153515a9f61cac04e92943207cb0ffa41[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sat Oct 22 11:25:34 2022 +0200
+
+    add goldilock
+
+[33mcommit 857502174dc904fcd9e476f9d2f9d727d5b9f8f8[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Thu Oct 20 22:45:58 2022 +0200
+
+    fix rps
+
+[33mcommit 58a77df74f656fd90c5a229c82061a7e0eb4be34[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Thu Oct 20 19:54:28 2022 +0200
+
+    user register
+
+[33mcommit f28ca270ac8b79a3ea5e98f4b99f9410b984e2f4[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Thu Oct 20 18:44:34 2022 +0200
+
+    more exercises
+
+[33mcommit c3c830aca4601f2992fb6b02dcd161fdfc181089[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Wed Oct 19 21:43:47 2022 +0200
+
+    add array-bootcamp
+
+[33mcommit 233f5c6f521f21ee410c80ef7fbc6043316ff2cf[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Wed Oct 19 20:46:27 2022 +0200
+
+    rock-paper-scissors
+
+[33mcommit 05a87495bcfff36b0b05fc6921e3006cdec25b4e[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Wed Oct 19 18:50:20 2022 +0200
+
+    move files
+
+[33mcommit 82eb81c0ffff5d25f8543e2bbb3280ff52b1c2f6[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Fri Oct 14 08:45:30 2022 +0200
+
+    move to correct folder
+
+[33mcommit 3d8fcb8ab7e1a3f68a35650133b823b220ccb6cb[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Wed Oct 12 11:26:35 2022 +0200
+
+    Update script.js
+
+[33mcommit 616ab4d33f975b6c36ece41759aad43d45306bde[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Wed Oct 12 11:20:39 2022 +0200
+
+    add sinus-minishop
+
+[33mcommit cddc95ab4ebe122594e9784c98c98746205253ff[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Tue Oct 11 09:46:18 2022 +0200
+
+    flow control bootcamp
+
+[33mcommit 7c958d8197e3bf28eef77d52d084e76ca8bb6066[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Thu Sep 29 16:34:29 2022 +0200
+
+    add semantic
+
+[33mcommit 268a90f4b3e92eed0d071700d575504ada66bcec[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Thu Sep 29 12:35:56 2022 +0200
+
+    add 3rd
+
+[33mcommit 5eeadc3596d3d602c8955282cb963a19ac30d7a4[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Thu Sep 29 09:57:54 2022 +0200
+
+    add 2nd
+
+[33mcommit 6f5a838fe0fb289f5bb52100586fd67ffa0ccc8c[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Mon Sep 26 17:53:51 2022 +0200
+
+    fix part 1
+
+[33mcommit dec91e73fe64f38722e7d8a533ba3a78bb432359[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Mon Sep 26 17:18:46 2022 +0200
+
+    first responsive exercise
+
+[33mcommit 314ead252602ac5f31318343b641c99a42aba8c4[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Fri Sep 16 03:21:02 2022 +0200
+
+    increase gap and fix centering of menu-nav
+
+[33mcommit 2a6db5305f2a828d4c8af858561b9310a1b56f04[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Fri Sep 16 02:50:33 2022 +0200
+
+    change doa contact to flexbox, add border-radius to it and lastly add bottom-gap in grid
+
+[33mcommit ba1394532d7221983bab1c84525db3744732a305[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Fri Sep 16 02:40:31 2022 +0200
+
+    add download-our-app
+
+[33mcommit 42879bbdbb5a6dc0eb6e5732b01d88469ad1d1ee[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Tue Sep 13 11:23:44 2022 +0200
+
+    calendar - change arrows & change to auto-rows
+
+[33mcommit c03e8a130a91a874be9e72ba8fdb8c2ff79b2925[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Tue Sep 13 10:46:57 2022 +0200
+
+    calendar - change weekend
+
+[33mcommit 967bd0072aaa0f07278e2fd2d32819553680afde[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Tue Sep 13 01:17:17 2022 +0200
+
+    add calendar
+
+[33mcommit cc8aeb24058d6d520a593e3772a9323885637614[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Mon Sep 12 22:07:28 2022 +0200
+
+    add dice - think about a better solution
+
+[33mcommit ad3e1919b72445394aefcc67a62cbd3a8429b59e[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sun Sep 11 12:08:24 2022 +0200
+
+    poster shop - change button and width of footer
+
+[33mcommit 17abe414545102f64f4627f5ee4f5ff5ccb177cd[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sun Sep 11 10:58:44 2022 +0200
+
+    poster shop - add sections in footer
+
+[33mcommit 8cbc99b73ea7d623bce7a5d92a03e83038371b87[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sun Sep 11 10:34:13 2022 +0200
+
+    poster shop - add sections in header
+
+[33mcommit cc820b423426cfe9500418f0abb96fc251865afb[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Sun Sep 11 01:24:15 2022 +0200
+
+    add poster shop - refactor needed
+
+[33mcommit 1aa9ebdee8e71a5ccbfb575e0682849ffd74441d[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Wed Sep 7 17:39:04 2022 +0200
+
+    maybe (?) BEM
+
+[33mcommit c3936718f76adb91e965857a52302a8f6c723aac[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Wed Sep 7 10:30:20 2022 +0200
+
+    change quote with pager
+
+[33mcommit 945fb6672ff3cf907d0f8210d61420fb83d5e4a0[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Wed Sep 7 10:08:03 2022 +0200
+
+    move folders to correct modules
+
+[33mcommit fe38daba0f946556c39f2613dc40f3ee35721c81[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Tue Sep 6 18:11:30 2022 +0200
+
+    add product (landscape)
+
+[33mcommit 392c65a78a72f68d1d3bc8c3c5ac546da644ccbf[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Tue Sep 6 17:37:35 2022 +0200
+
+    add product (profile)
+
+[33mcommit 149432ce8a50d2bd6d129f92c2169080e88f4867[m
+Author: indianpojken <io.qrdr@gmail.com>
+Date:   Tue Sep 6 14:43:48 2022 +0200
+
+    add profile
+
+[33mcommit 6f9524d56a764a93f2d7ed16b17d5efe85d7f280[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Tue Sep 6 12:03:20 2022 +0200
+
+    add card with pager
+
+[33mcommit 75bc58a9ff17db96faed1f661adff1cf806db0c1[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Tue Sep 6 01:46:35 2022 +0200
+
+    add playing cards
+
+[33mcommit 6beaa1478edcf556d3e9ecd4dc495a90814bd855[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Tue Sep 6 00:49:20 2022 +0200
+
+    add fibonacci
+
+[33mcommit 96fcc9a5736ba5b6af44bad2b49414fddea24ffe[m
+Author: Fredrik <io.qrdr@gmail.com>
+Date:   Mon Sep 5 22:57:37 2022 +0200
+
+    init
