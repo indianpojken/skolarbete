@@ -1,6 +1,5 @@
 enum CardState {
     Normal,
-    Flipped,
     Completed,
 }
 
@@ -54,7 +53,6 @@ class Memory {
     #clickCard(card: Card): void {
         if (card.state === CardState.Normal
             && !this.#selectedCards.second) {
-            card.state = CardState.Flipped;
             card.element.classList.add('flip');
             this.#selectCard(card);
             this.#checkPair();

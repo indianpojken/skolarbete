@@ -13,8 +13,7 @@ var _Memory_instances, _Memory_cards, _Memory_selectedCards, _Memory_clickCard, 
 var CardState;
 (function (CardState) {
     CardState[CardState["Normal"] = 0] = "Normal";
-    CardState[CardState["Flipped"] = 1] = "Flipped";
-    CardState[CardState["Completed"] = 2] = "Completed";
+    CardState[CardState["Completed"] = 1] = "Completed";
 })(CardState || (CardState = {}));
 function createCards() {
     return Array.from(document.querySelectorAll('.memory-card'))
@@ -53,7 +52,6 @@ class Memory {
 _Memory_cards = new WeakMap(), _Memory_selectedCards = new WeakMap(), _Memory_instances = new WeakSet(), _Memory_clickCard = function _Memory_clickCard(card) {
     if (card.state === CardState.Normal
         && !__classPrivateFieldGet(this, _Memory_selectedCards, "f").second) {
-        card.state = CardState.Flipped;
         card.element.classList.add('flip');
         __classPrivateFieldGet(this, _Memory_instances, "m", _Memory_selectCard).call(this, card);
         __classPrivateFieldGet(this, _Memory_instances, "m", _Memory_checkPair).call(this);
