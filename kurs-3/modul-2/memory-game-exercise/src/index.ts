@@ -1,106 +1,97 @@
-enum CardState {
-    Normal,
-    Completed,
-}
-
 interface Card {
-    value: number,
-    state: CardState,
-    element: Element,
-}
-
-function createCards(): Card[] {
-    return Array.from(document.querySelectorAll('.memory-card'))
-        .map((element): Card => {
-            return {
-                value: Number(element.getAttribute('data-card')),
-                state: CardState.Normal,
-                element: element,
-            }
-        });
+  value: number,
+  paired: boolean,
+  element: Element,
 }
 
 class Memory {
-    #cards: Card[];
-    #selectedCards: { first: Card | null, second: Card | null };
+  private cards: Card[];
+  private selectedCards: [Card | null, Card | null];
 
-    constructor() {
-        this.#cards = createCards();
-        this.shuffle();
-        this.#selectedCards = { first: null, second: null };
+  constructor(cards: Card[]) {
+    this.cards = cards;
+    this.shuffleCards();
+    this.selectedCards = [null, null];
 
-        this.#cards.forEach((card) => {
-            card.element.addEventListener('click', () => {
-                this.#clickCard(card);
-            });
-        });
+    this.cards.forEach((card) => {
+      card.element.addEventListener('click', () => this.clickCard(card));
+    });
+  }
+
+  restart(): void {
+    this.shuffleCards();
+    this.cards.forEach((card) => card.paired = false);
+    this.restoreCards();
+  }
+
+  private shuffleCards(): void {
+    const copy = [...this.cards];
+
+    const shuffled: Card[] = this.cards.flatMap(() =>
+      copy.splice(Math.floor(Math.random() * copy.length), 1)
+    );
+
+    document.querySelector('.memory-cards')
+      .replaceChildren(...shuffled.map((card) => card.element));
+  }
+
+  private clickCard(card: Card): void {
+    // if (!card.paired && this.selectedCards.includes(null)) {
+    if (!card.paired && !this.selectedCards[1]) {
+      card.element.classList.add('flip');
+      this.selectCard(card);
+      this.compareCards();
     }
+  }
 
-    shuffle(): void {
-        let copy = [...this.#cards];
-        let shuffled: Card[] = [];
-
-        for (let index = 0; index < (copy.length + shuffled.length); index++) {
-            shuffled.push(
-                ...copy.splice(Math.floor(Math.random() * copy.length), 1)
-            );
-        }
-
-        document.querySelector('.memory-cards')
-            ?.replaceChildren(...shuffled.map((card) => card.element));
+  private selectCard(card: Card): void {
+    if (!this.selectedCards.includes(card)) {
+      this.selectedCards = [card, this.selectedCards[0]];
     }
+  }
 
-    #clickCard(card: Card): void {
-        if (card.state === CardState.Normal
-            && !this.#selectedCards.second) {
-            card.element.classList.add('flip');
-            this.#selectCard(card);
-            this.#checkPair();
-        }
+  private compareCards(): void {
+    // if (!this.selectedCards.includes(null)) {
+    if (this.selectedCards[1]) {
+      if (this.selectedCards[0].value === this.selectedCards[1].value) {
+        this.selectedCards.forEach((card) => card.paired = true);
+        this.selectedCards = [null, null];
+        this.checkVictory();
+      } else {
+        setTimeout(() => {
+          this.selectedCards = [null, null];
+          this.restoreCards();
+        }, 1000);
+      }
     }
+  }
 
-    #selectCard(card: Card): void {
-        if (!this.#selectedCards.first) {
-            this.#selectedCards.first = card;
-        } else if (!this.#selectedCards.second) {
-            this.#selectedCards.second = card;
-        }
+  private restoreCards(): void {
+    this.cards
+      .filter((card) => card.paired === false)
+      .forEach((card) => card.element.classList.remove('flip'));
+  }
+
+  private checkVictory(): void {
+    if (this.cards.every((card) => card.paired === true)) {
+      document.querySelector('.overlay').classList.toggle('show');
     }
-
-    #checkPair() {
-        if (this.#selectedCards.first && this.#selectedCards.second) {
-            if (this.#selectedCards.first.value === this.#selectedCards.second.value) {
-                this.#selectedCards.first.state = CardState.Completed;
-                this.#selectedCards.second.state = CardState.Completed;
-
-                this.#selectedCards = { first: null, second: null };
-
-                this.#checkVictory();
-            } else {
-                this.#selectedCards.first.state = CardState.Normal;
-                this.#selectedCards.second.state = CardState.Normal;
-
-                setTimeout(() => {
-                    this.#restoreCards();
-                    this.#selectedCards = { first: null, second: null };
-                }, 1000);
-            }
-        }
-    }
-
-    #restoreCards(): void {
-        this.#cards
-            .filter((card) => card.state !== CardState.Completed)
-            .forEach((card) => {
-                card.element.classList.remove('flip');
-            });
-    }
-
-    #checkVictory(): void {
-        if (this.#cards.every((card) => card.state === CardState.Completed)) {
-            document.querySelector('.overlay').classList.toggle('show');
-        }
-    }
+  }
 }
 
-const memory = new Memory();
+const cards = Array.from(document.querySelectorAll('.memory-card'))
+  .map((element): Card => {
+    return {
+      value: Number(element.getAttribute('data-card')),
+      paired: false,
+      element: element,
+    };
+  });
+
+const memory = new Memory(cards);
+
+document.querySelector('.overlay > .close')
+  .addEventListener('click', () => {
+    document.querySelector('.overlay').classList.toggle('show');
+    memory.restart();
+  });
