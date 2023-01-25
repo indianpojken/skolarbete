@@ -14,18 +14,18 @@ function showDividedSum(sum: number): void {
 
 document
   .getElementById('calculateButton')
-  .addEventListener('click', (): void => {
-    const sum: number =
+  .addEventListener('click', () => {
+    const sum =
       Number((document.getElementById('sum') as HTMLInputElement).value);
 
-    const tip: number =
+    const tip =
       Number((document.getElementById('tip') as HTMLInputElement).value);
 
-    const numberOfFriends: number =
+    const numberOfFriends =
       Number((document.getElementById('numberOfFriends') as HTMLInputElement).value);
 
-    const calculatedTip: number = calculateTip(sum, tip);
-    const sumDivided: number = divideTotal(sum + calculatedTip, numberOfFriends);
+    const calculatedTip = calculateTip(sum, tip);
+    const sumDivided = divideTotal(sum + calculatedTip, numberOfFriends);
 
     showDividedSum(sumDivided);
   });
