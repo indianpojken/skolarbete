@@ -1,0 +1,35 @@
+main {
+  width: 900px;
+  padding: 10px;
+  margin: auto;
+  background-color: #262626;
+  padding: 25px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: 1px solid #404040;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.wikipedia {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+a {
+  color: #0ea5e9;
+}
+
+a:hover {
+  color: #7dd3fc;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+}

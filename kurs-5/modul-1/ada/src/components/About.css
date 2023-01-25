@@ -1,0 +1,37 @@
+h1,
+h2 {
+    margin-top: 40px;
+    color: #f5f5f5;
+}
+
+figure {
+    margin: 20px;
+    display: inline-block;
+}
+
+figcaption {
+    color: #a3a3a3;
+    font-style: italic;
+}
+
+img {
+    width: 200px;
+}
+
+blockquote {
+    color: #a3a3a3;
+    margin-left: 25px;
+    padding-left: 10px;
+    border-left: 3px solid #404040;
+    font-style: italic;
+}
+
+cite {
+    color: #737373;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.sources {
+  color: #d4d4d4;
+}
