@@ -11,7 +11,7 @@ function App() {
     { title: 'A Sign of Four', author: 'Sir Arthur Conan Doyle', synopsis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat' },
     { title: 'A Sign of Four', author: 'Sir Arthur Conan Doyle', synopsis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat' },
     { title: 'A Sign of Four', author: 'Sir Arthur Conan Doyle', synopsis: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e ex ea commodo consequatex ea commodo consequatex ea commodo consequatex ea commodo consequatex ea commodo consequatex ea commodo consequatex ea commodo consequatex ea commodo consequatex ea commodo consequatx ea commodo consequat' },
-  ]
+  ];
 
   return (
     <div className="app">
