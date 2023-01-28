@@ -1,0 +1,19 @@
+.cart {
+    color: #cf5c89;
+    font-weight: 500;
+    
+    margin-left: auto;
+}
+
+.cart__items {
+    font-weight: 400;
+
+    color: #000;
+    background-color: #fff;
+
+
+    border-radius: 50%;
+
+    margin-left: 0.4rem;
+    padding: 3px 8px;
+}

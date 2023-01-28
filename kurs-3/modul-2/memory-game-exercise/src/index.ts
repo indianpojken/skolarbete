@@ -8,14 +8,28 @@ class Memory {
   private cards: Card[];
   private selectedCards: [Card | null, Card | null];
 
-  constructor(cards: Card[]) {
-    this.cards = cards;
+  constructor() {
+    this.cards = Array.from(document.querySelectorAll('.memory-card'))
+      .map((element): Card => {
+        return {
+          value: Number(element.getAttribute('data-card')),
+          paired: false,
+          element: element,
+        };
+      });
+
     this.shuffleCards();
     this.selectedCards = [null, null];
 
     this.cards.forEach((card) => {
       card.element.addEventListener('click', () => this.clickCard(card));
     });
+
+    document.querySelector('.overlay > .close')
+      .addEventListener('click', () => {
+        document.querySelector('.overlay').classList.toggle('show');
+        memory.restart();
+      });
   }
 
   restart(): void {
@@ -79,19 +93,4 @@ class Memory {
   }
 }
 
-const cards = Array.from(document.querySelectorAll('.memory-card'))
-  .map((element): Card => {
-    return {
-      value: Number(element.getAttribute('data-card')),
-      paired: false,
-      element: element,
-    };
-  });
-
-const memory = new Memory(cards);
-
-document.querySelector('.overlay > .close')
-  .addEventListener('click', () => {
-    document.querySelector('.overlay').classList.toggle('show');
-    memory.restart();
-  });
+const memory = new Memory();
