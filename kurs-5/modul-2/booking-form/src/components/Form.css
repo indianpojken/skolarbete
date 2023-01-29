@@ -1,0 +1,171 @@
+.form {
+    max-width: 340px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 5rem auto;
+}
+
+.form>header {
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.form__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #CECECE;
+    font-size: 1.7rem;
+
+    margin: 0;
+    height: 60px;
+}
+
+.form__stations {
+    display: flex;
+    position: relative;
+}
+
+.station {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.station--from {
+    background-color: #E2E2E2;
+}
+
+.station--to {
+    background-color: #ECECEC;
+}
+
+.station__name {
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 10px;
+    /* height of station__time */
+}
+
+.station__time {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.5rem;
+    line-height: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    margin: 0;
+}
+
+.station__arrow {
+    position: absolute;
+    top: calc(50% - (8px / 2));
+    left: calc(50% - (28px / 2));
+}
+
+.form__inputs {
+    margin: 0.8rem 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+input {
+    height: 40px;
+    padding: 0 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+fieldset {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+    column-gap: 1rem;
+}
+
+fieldset>label {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form__accept-terms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.form__accept-terms > input {
+    height: 1rem;
+    margin: 0 0.2rem 0 0;
+}
+
+button {
+    transition: all 0.3s;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+
+    color: #FFFFFF;
+    border: none;
+    background: #000000;
+    border-radius: 4px;
+    padding: 1rem
+}
+
+button:disabled {
+    color: #FFFFFF;
+    border: none;
+    background: #00000090;
+    border-radius: 4px;
+    padding: 1rem
+}
+
+input[type="radio"] {
+    margin-left: 0;
+}
+
+.form__columns {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.form__columns > label {
+    flex: 1;
+}
+
+select {
+    height: 40px;
+    padding: 0 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    background-color: #fff;
+}
