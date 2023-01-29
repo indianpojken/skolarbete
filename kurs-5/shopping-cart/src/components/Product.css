@@ -43,3 +43,7 @@
     margin-top: 1rem;
     align-self: center;
 }
+
+.product__button:disabled {
+    background-color: #37aeab64;
+}

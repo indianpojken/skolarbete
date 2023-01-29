@@ -2,10 +2,10 @@ import Cart from './Cart';
 
 import './Header.css';
 
-function Header() {
+function Header({ cart }) {
     return (
         <header className="header">
-            <Cart />
+            <Cart items={cart} />
         </header>
     );
 }
