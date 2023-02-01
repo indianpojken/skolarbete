@@ -1,0 +1,11 @@
+.editor {
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-picker {
+  flex: 1;
+}
