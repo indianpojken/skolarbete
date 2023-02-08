@@ -4,21 +4,19 @@ import './DisplayMovies.css';
 
 function DisplayMovies({ movies }) {
   const list = movies.Search?.map((movie) =>
-    <li key={movie.imdbID}>
-      <MovieCard
-        title={movie.Title}
-        year={movie.Year}
-        poster={movie.Poster}
-        imdb={movie.imdbID}
-        type={movie.Type}
-      />
-    </li>
+    <MovieCard
+      key={movie.imdbID}
+      title={movie.Title}
+      year={movie.Year}
+      poster={movie.Poster}
+      imdb={movie.imdbID}
+    />
   );
 
   return (
-    <section>
+    <section className="movies">
       {movies.Response === 'True' &&
-        <ol>
+        <ol className="movies__list">
           {list}
         </ol>
       }

@@ -26,7 +26,7 @@ function App() {
   }, [query])
 
   return (
-    <div className="App">
+    <div className="app">
       <header>
         <SearchMovie callback={(data) => setQuery(data)} />
       </header>

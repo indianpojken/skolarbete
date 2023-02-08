@@ -12,9 +12,10 @@ function SearchMovie({ callback }) {
   }
 
   return (
-    <article>
+    <article className="search">
       <input
         type="text" name="search" minLength="1" maxLength="20"
+        value={search}
         onChange={(event) => setSearch(event.target.value)}
         onKeyDown={callCallback}
       />

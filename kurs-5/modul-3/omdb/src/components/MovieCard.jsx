@@ -1,18 +1,23 @@
 import './MovieCard.css';
 
-function MovieCard({ title, year, imdb, type, poster }) {
+function MovieCard({ title, year, imdb, poster }) {
   return (
-    <article className="movie">
+    <li className="movie">
       <aside className="movie__poster">
-        <img src={poster} />
+        {poster === 'N/A'
+          ? <p>N/A</p>
+          : <img src={poster} />
+        }
+        <a className="movie__imdb" href={'https://www.imdb.com/title/' + imdb}>
+          IMDb
+        </a>
       </aside>
-      <aside>
-        {title}
-        {year}
-        {imdb}
-        {type}
+      <aside className="movie__data">
+        <h2 className="movie__title">
+          {title} <span>({year})</span>
+        </h2>
       </aside>
-    </article>
+    </li>
   );
 }
 
