@@ -1,0 +1,32 @@
+.insult {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.insult__quote {
+  font-size: 1.5rem;
+  font-family: 'MedievalSharp', cursive;
+}
+
+.insult__quote::before {
+  content: '"';
+}
+
+.insult__quote::after {
+  content: '"';
+}
+
+.insult__play {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.insult__play::before {
+  content: '- ';
+}
+
+.insult__get-insult {
+  align-self: stretch;
+  margin-top: 1.5rem;
+  padding: 2rem;
+}

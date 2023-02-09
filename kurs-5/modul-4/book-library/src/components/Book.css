@@ -1,0 +1,70 @@
+.book {
+  display: flex;
+  width: 200px;
+  height: 240px;
+  background: linear-gradient(208.29deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 92.13%), var(--color);
+  border-radius: 2px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.book>section {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin: 15px;
+  color: #fff;
+}
+
+.book__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.book__author {
+  font-weight: 400;
+  font-size: 0.65rem;
+  margin: 0;
+  padding: 0;
+}
+
+.book::before {
+  content: '';
+  max-width: 3px;
+  min-width: 3px;
+  margin-left: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.book--big {
+  display: flex;
+  width: 400px;
+  height: 465px;
+}
+
+.book--big::before {
+  content: '';
+  max-width: 6px;
+  min-width: 6px;
+  margin-left: 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.book--big>section {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin: 30px;
+  color: #fff;
+}
+
+.book--big .book__title {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.book--big .book__author {
+  font-weight: 400;
+  font-size: 1.1rem;
+}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Cart from './Cart';
 
 import './Header.css';
@@ -8,16 +10,17 @@ function Header({ cart }) {
             <section className="menu">
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="/products">Products</a>
+                        <Link to="/products">Products</Link>
                     </li>
                     <li>
-                        <a href="/about">About</a>
+                        <Link to="/about">About</Link>
                     </li>
                 </ul>
             </section>
+
             <Cart items={cart} />
         </header>
     );

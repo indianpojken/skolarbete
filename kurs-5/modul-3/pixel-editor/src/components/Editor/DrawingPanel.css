@@ -1,9 +1,9 @@
 .drawing-panel {
-    display: flex;
-    flex: 0;
-    flex-direction: column;
-    row-gap: 1px;
-    padding: 1px;
-    border: solid 1px #fff;
-    background-color: #fff;
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  row-gap: 1px;
+  padding: 1px;
+  border: solid 1px #fff;
+  background-color: #fff;
 }

@@ -7,14 +7,10 @@ import { CompactPicker } from 'react-color';
 function Editor({ width, height }) {
   const [color, setColor] = useState("#fff");
 
-  const selectColor = (color) => {
-    setColor(color.hex);
-  }
-
   return (
     <main className="editor">
       <section className="color-picker">
-        <CompactPicker color={color} onChangeComplete={selectColor} />
+        <CompactPicker color={color} onChangeComplete={(color) => setColor(color.hex)} />
       </section>
 
       <DrawingPanel width={width} height={height} selectedColor={color} />

@@ -1,0 +1,22 @@
+.insults {
+  display: flex;
+  flex-direction: column;
+}
+
+.insults__list > ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+.insults__list > ol > li{
+  padding: 0.5rem 1rem;
+}
+
+.insults__list > ol > li:nth-child(2n){
+  background-color: #eee;
+}
+
+.insults__list p {
+  margin: 0.4rem;
+}
+

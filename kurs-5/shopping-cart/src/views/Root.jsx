@@ -7,7 +7,9 @@ function Root() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    if (!cart.some(p => p.id === product.id)) {
+      setCart([...cart, product]);
+    }
   }
 
   return (
