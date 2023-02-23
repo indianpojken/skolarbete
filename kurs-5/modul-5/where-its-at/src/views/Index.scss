@@ -1,0 +1,21 @@
+@use "../scss/colors.scss";
+
+.events {
+    >header {
+        display: flex;
+        justify-content: center;
+        margin: 34px 0;
+    }
+
+    >main {
+        height: 100%;
+    }
+
+    &__title {
+        color: colors.$pink;
+    }
+
+    &__list {
+        margin: auto 0;
+    }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "performer": "Lasse-Stefanz",
+    "price": 350,
+    "date": "21 mar",
+    "start": "19.00",
+    "end": "21.00",
+    "location": "Kjell Härnqvistsalen"
+  },
+  {
+    "id": 1,
+    "performer": "Pelle trubadur",
+    "price": 110,
+    "date": "29 mar",
+    "start": "22.00",
+    "end": "00.00",
+    "location": "Pubelipuben"
+  },
+  {
+    "id": 2,
+    "performer": "Kajsas kör",
+    "price": 99,
+    "date": "10 apr",
+    "start": "15.00",
+    "end": "16.00",
+    "location": "Götaplatsen"
+  },
+  {
+    "id": 3,
+    "performer": "Pelle trubadur",
+    "price": 150,
+    "date": "17 apr",
+    "start": "22.00",
+    "end": "du tröttnar",
+    "location": "Din favoritkällare"
+  }
+]
