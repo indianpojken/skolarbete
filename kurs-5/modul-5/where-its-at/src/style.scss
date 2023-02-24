@@ -1,6 +1,10 @@
 @use "./scss/typography.scss";
 @use "./scss/colors.scss";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: colors.$purple;
     display: flex;
