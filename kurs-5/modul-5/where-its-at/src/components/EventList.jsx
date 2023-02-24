@@ -12,8 +12,8 @@ function EventList({ events }) {
   const dispatch = useDispatch();
 
   const click = (ticket) => {
-    dispatch(selectTicket(ticket))
-    navigate('/confirm')
+    dispatch(selectTicket(ticket));
+    navigate('/buy');
   }
 
   return (

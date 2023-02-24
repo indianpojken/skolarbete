@@ -8,7 +8,7 @@ function Index() {
   return (
     <div className="app events">
       <header>
-        <h2 className="events__title">Events</h2>
+        <h1 className="events__title">Events</h1>
       </header>
 
       <main>

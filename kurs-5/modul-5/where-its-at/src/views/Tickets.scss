@@ -1,18 +1,15 @@
 @use "../scss/colors.scss";
 
-.events {
+.tickets {
     >header {
         display: flex;
         justify-content: center;
-        margin: 34px 0;
+        margin: 100px 0 50px 0;
     }
 
     &__title {
+        text-align: center;
+        max-width: 15rem;
         color: colors.$pink;
-        font-size: 2rem;
-    }
-
-    &__list {
-        margin: auto 0;
     }
 }

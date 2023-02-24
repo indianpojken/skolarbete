@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { Index } from './views/Index';
-import { Confirm } from './views/Confirm';
+import { Buy } from './views/Buy';
+import { Tickets } from './views/Tickets';
 
 const router = createBrowserRouter([
   {
@@ -9,8 +10,12 @@ const router = createBrowserRouter([
     element: <Index />,
   },
   {
-    path: '/confirm',
-    element: <Confirm />,
+    path: '/buy',
+    element: <Buy />,
+  },
+  {
+    path: '/tickets',
+    element: <Tickets />,
   },
 ]);
 

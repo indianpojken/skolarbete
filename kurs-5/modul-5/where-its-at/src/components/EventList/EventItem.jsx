@@ -5,14 +5,14 @@ function EventItem({ event, onClick }) {
     <article className="event-item" onClick={onClick}>
       <aside className="event-item__box">
         <article className="event-item__date">
-          {event.date}
+          {event.date.slice(0, 6)}
         </article>
       </aside>
 
       <aside className="event-item__information">
-        <p className="event-item__performer">
+        <h2 className="event-item__performer">
           {event.performer}
-        </p>
+        </h2>
 
         <p className="event-item__location">
           {event.location}
