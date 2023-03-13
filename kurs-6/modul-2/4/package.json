@@ -1,0 +1,16 @@
+{
+  "name": "4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Fredrik Liljedahl",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

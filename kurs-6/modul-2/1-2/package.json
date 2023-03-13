@@ -1,0 +1,13 @@
+{
+  "name": "1-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-2.js",
+  "scripts": {
+    "all": "node 1.js; node 2.js"
+  },
+  "keywords": [],
+  "author": "Fredrik Liljedahl",
+  "license": "MIT",
+  "type": "module"
+}
