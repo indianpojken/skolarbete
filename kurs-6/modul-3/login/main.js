@@ -22,7 +22,7 @@ app.post('/api/signup',
 
     if (!duplicate) {
       users.push({ username, email, password });
-      response.status(201).send({ success: true })
+      response.status(201).send({ success: true });
     } else {
       response.status(409).send({ success: false, ...duplicates });
     }

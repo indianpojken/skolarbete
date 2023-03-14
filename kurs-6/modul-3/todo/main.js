@@ -18,7 +18,7 @@ app.post('/api/todo',
     const createdAt = new Date().toLocaleDateString();
     todos.unshift({ id, todo, done, createdAt });
 
-    response.status(201).send({ success: true })
+    response.status(201).send({ success: true });
   }
 );
 
