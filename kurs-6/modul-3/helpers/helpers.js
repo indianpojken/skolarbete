@@ -1,32 +1,33 @@
-function validateBody(scheme) {
+function validate(scheme) {
   return (request, response, next) => {
-    const propertiesExist = Object.keys(scheme).every((key) => key in request.body);
+    const propertiesExist = Object.keys(scheme).every(
+      (key) => key in request.body
+    );
 
-    if (propertiesExist) {
-      const matchingTypes = Object.keys(scheme)
-        .every((key) => typeof (request.body[key]) === scheme[key]);
+    const correctTypes = Object.entries(scheme).every(
+      ([key, type]) => typeof (request.body[key]) === type
+    );
 
-      if (matchingTypes) {
-        next();
-      } else {
-        response.status(400).send({
-          success: false, error: 'Incorrect types for request-body.'
-        });
-      }
-    } else {
+    if (!propertiesExist) {
       response.status(400).send({
         success: false, error: 'Incorrect request-body.'
       });
+    } else if (!correctTypes) {
+      response.status(400).send({
+        success: false, error: 'Incorrect type(s) for request-body.'
+      });
+    } else {
+      next();
     }
   }
 }
 
-function paginator(data, options = { limit: 5 }) {
+function paginator(data, fallback = { limit: 5 }) {
   return (request, response) => {
     const { page, limit } = request.query;
 
     if (page !== undefined) {
-      const _limit = (limit || options.limit);
+      const _limit = (limit || fallback.limit);
       const start = ((page || 1) - 1) * _limit;
       const end = start + _limit;
 
@@ -37,4 +38,4 @@ function paginator(data, options = { limit: 5 }) {
   }
 }
 
-export { validateBody, paginator };
+export { validate, paginator };

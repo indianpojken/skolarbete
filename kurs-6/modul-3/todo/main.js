@@ -1,5 +1,5 @@
 import express from 'express';
-import { validateBody, paginator } from '../helpers/helpers.js';
+import { validate, paginator } from '../helpers/helpers.js';
 
 const app = express();
 const port = 8000;
@@ -11,7 +11,7 @@ app.use(express.json());
 app.get('/api/todo', paginator(todos));
 
 app.post('/api/todo',
-  validateBody({ id: 'string', todo: 'string', done: 'boolean' }),
+  validate({ id: 'string', todo: 'string', done: 'boolean' }),
   (request, response) => {
     const { id, todo, done } = request.body;
 
