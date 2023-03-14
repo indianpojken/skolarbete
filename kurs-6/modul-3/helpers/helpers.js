@@ -21,11 +21,20 @@ function validateBody(scheme) {
   }
 }
 
-function paginate(data, page, limit) {
-  const start = ((page || 1) - 1) * limit;
-  const end = start + limit;
+function paginator(data, options = { limit: 5 }) {
+  return (request, response) => {
+    const { page, limit } = request.query;
 
-  return data.slice(start, end);
+    if (page !== undefined) {
+      const _limit = (limit || options.limit);
+      const start = ((page || 1) - 1) * _limit;
+      const end = start + _limit;
+
+      response.send(data.slice(start, end));
+    } else {
+      response.send(data);
+    }
+  }
 }
 
-export { validateBody, paginate };
+export { validateBody, paginator };

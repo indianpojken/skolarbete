@@ -1,5 +1,5 @@
 import express from 'express';
-import { validateBody, paginate } from '../helpers/helpers.js';
+import { validateBody, paginator } from '../helpers/helpers.js';
 
 const app = express();
 const port = 8000;
@@ -8,15 +8,7 @@ const todos = [];
 
 app.use(express.json());
 
-app.get('/api/todo', (request, response) => {
-  const { page, limit } = request.query;
-
-  if (page !== undefined) {
-    response.send(paginate(todos, page, limit || 5));
-  } else {
-    response.send(todos);
-  }
-});
+app.get('/api/todo', paginator(todos));
 
 app.post('/api/todo',
   validateBody({ id: 'string', todo: 'string', done: 'boolean' }),
