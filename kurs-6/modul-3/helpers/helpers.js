@@ -1,21 +1,19 @@
 function validate(scheme) {
   return (request, response, next) => {
-    const propertiesExist = Object.keys(scheme).every(
-      (key) => key in request.body
-    );
+    const errors = [];
 
-    const correctTypes = Object.entries(scheme).every(
-      ([key, type]) => typeof (request.body[key]) === type
-    );
+    Object.entries(scheme).forEach(([key, type]) => {
+      const itemType = typeof (request.body[key]);
 
-    if (!propertiesExist) {
-      response.status(400).send({
-        success: false, error: 'Incorrect request-body.'
-      });
-    } else if (!correctTypes) {
-      response.status(400).send({
-        success: false, error: 'Incorrect type(s) for request-body.'
-      });
+      if (!(key in request.body)) {
+        errors.push(`'${key}' was not found in request-body`);
+      } else if (itemType !== type) {
+        errors.push(`'${key}' is type '${itemType}', expected '${type}'`);
+      }
+    });
+
+    if (errors.length) {
+      response.status(400).send({ success: false, errors });
     } else {
       next();
     }
