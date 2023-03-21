@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { validate } from '../middlewear/validate.js';
+import { validate } from '../middleware/validate.js';
 import { Cart } from '../helpers/cart.js';
 
 const router = Router();
