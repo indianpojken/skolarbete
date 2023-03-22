@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import { validate } from '../middleware/validate.js';
-import { Cart } from '../helpers/cart.js';
+import { Product } from '../helpers/product.js';
 
 const router = Router();
 
@@ -15,13 +15,15 @@ router.post('/',
   }),
   (request, response) => {
     const { items } = request.body;
-    const order = new Cart(items.map((i) => i.serial));
 
-    response.json({
-      items: order.items,
-      quantity: order.items.length,
-      total: order.total
-    });
+    try {
+      const order = items.map((item) => new Product(item.serial).details);
+      const total = order.reduce((acc, item) => acc + item.price, 0);
+
+      response.status(201).json({ success: true, order, total });
+    } catch (error) {
+      response.status(400).json({ success: false, error: error.message });
+    }
   }
 );
 
