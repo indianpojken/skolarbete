@@ -20,7 +20,7 @@ class Product {
   }
 
   #isProduct(serial) {
-    return products.some((item) => item.serial === serial);
+    return products.some((product) => product.serial === serial);
   }
 }
 
