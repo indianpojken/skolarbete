@@ -1,0 +1,58 @@
+import express from 'express';
+import swaggerUI from 'swagger-ui-express';
+
+import { validate } from '../validate/validate.js';
+import { paginator } from '../helpers/helpers.js';
+
+import apiDocs from './docs/docs.json' assert {type: 'json'};
+
+const app = express();
+const port = 8000;
+
+const todos = [];
+
+app.use(express.json());
+
+app.use('/api/docs', swaggerUI.serve);
+app.use('/api/docs', swaggerUI.setup(apiDocs));
+
+app.get('/api/todo',
+  validate({
+    query: { page: { condition: (n) => Number(n) >= 1 }, }
+  }, { maybe: true }),
+  paginator(todos)
+);
+
+app.post('/api/todo',
+  validate({
+    body: {
+      id: { type: 'string' },
+      todo: { type: 'string', condition: (text) => text !== '' },
+      done: { type: 'boolean' },
+    }
+  }),
+  (request, response) => {
+    const { id, todo, done } = request.body;
+
+    const createdAt = new Date().toLocaleDateString();
+    todos.unshift({ id, todo, done, createdAt });
+
+    response.status(201).send({ success: true });
+  }
+);
+
+app.delete('/api/todo/:id', (request, response) => {
+  const { id } = request.params;
+
+  const index = todos.findIndex((todo) => todo.id === id);
+
+  if (index !== -1) {
+    response.send(todos.splice(index, 1));
+  } else {
+    response.status(404).send({
+      success: false, error: 'Todo with the corresponding ID was not found'
+    });
+  }
+});
+
+app.listen(port);
