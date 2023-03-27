@@ -5,14 +5,14 @@ function paginator(database, fallback = { limit: 5 }) {
     if (page !== undefined) {
       const _limit = limit || fallback.limit;
 
-      const data = await database.find({})
+      const data = await database.find()
         .sort({ todo: -1 })
         .limit(_limit)
         .skip((page - 1) * _limit);
 
       response.json(data);
     } else {
-      response.json(await database.find({}).sort({ todo: -1 }));
+      response.json(await database.find().sort({ todo: -1 }));
     }
   }
 }

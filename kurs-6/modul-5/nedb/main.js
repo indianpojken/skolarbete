@@ -22,13 +22,13 @@ await db.update({ firstName: 'Birgitta' }, { $set: { firstName: 'Lina' } });
 await db.remove({ firstName: 'Margareta' });
 
 console.log('-- db --');
-console.log(await db.find({}));
+console.log(await db.find());
 
 const persons = {
   names: []
 };
 
-(await db.find({})).forEach((person) =>
+(await db.find()).forEach((person) =>
   persons.names.push(`${person.firstName} ${person.lastName}`)
 );
 
