@@ -7,6 +7,8 @@ import { Product } from '../helpers/product.js';
 
 const router = Router();
 
+const db = Datastore.create('orders.db');
+
 router.post('/',
   validate({
     body: {
@@ -23,8 +25,6 @@ router.post('/',
   }),
   async (request, response) => {
     const { shippingInfo, items } = request.body;
-
-    const db = Datastore.create('orders.db');
 
     try {
       const products = items.map((item) => new Product(item.serial).details);
