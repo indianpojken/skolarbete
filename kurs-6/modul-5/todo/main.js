@@ -2,12 +2,11 @@ import express from 'express';
 import Datastore from 'nedb-promises';
 
 import { validate } from './middleware/validate.js';
-import { paginator } from './middleware/paginator.js';
 
 const app = express();
 const port = 8000;
 
-const db = Datastore.create('todos.db');
+const todos = Datastore.create('todos.db');
 
 app.use(express.json());
 
@@ -18,7 +17,20 @@ app.get('/api/todos',
       limit: { condition: (n) => Number(n) >= 1 },
     }
   }, { maybe: true }),
-  paginator(db)
+  async (request, response) => {
+    const { page } = request.query;
+    const limit = request.query.limit || 5;
+
+    const data = await todos.find().sort({ todo: -1 });
+
+    if (page !== undefined) {
+      response.status(200).json(
+        data.limit(limit).skip((page - 1) * limit)
+      );
+    } else {
+      response.status(200).json(data);
+    }
+  }
 );
 
 app.post('/api/todos',
@@ -31,7 +43,7 @@ app.post('/api/todos',
     const { todo } = request.body;
 
     const createdAt = new Date().toLocaleDateString();
-    await db.insert({ todo, done: false, createdAt });
+    await todos.insert({ todo, done: false, createdAt });
 
     response.status(201).json({ success: true });
   }
@@ -40,13 +52,14 @@ app.post('/api/todos',
 app.delete('/api/todos/:id', async (request, response) => {
   const { id } = request.params;
 
-  const deleted = await db.remove({ _id: id });
+  const deleted = await todos.remove({ _id: id });
 
   if (deleted) {
     response.status(200).json({ success: true });
   } else {
     response.status(404).json({
-      success: false, error: 'Todo with the corresponding ID was not found'
+      success: false,
+      error: 'Todo with the corresponding ID was not found'
     });
   }
 });
