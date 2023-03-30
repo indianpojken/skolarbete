@@ -1,27 +1,16 @@
-import { Router } from 'express';
-
-import { validate } from '../middleware/validate.js';
-import { Cart } from '../helpers/cart.js';
-
-const router = Router();
+import { Cart } from '../models/cart.model.js';
 
 const cart = new Cart();
 
-router.get('/', async (request, response) => {
+async function getCart(request, response) {
   response.status(200).json({
     success: true,
     items: await cart.items,
     total: await cart.total,
   });
-});
+}
 
-const validator = validate({
-  body: {
-    serial: { type: 'string' },
-  },
-});
-
-router.post('/', validator, async (request, response) => {
+async function addItem(request, response) {
   const { serial } = request.body;
 
   try {
@@ -32,9 +21,9 @@ router.post('/', validator, async (request, response) => {
       success: false, message: error.message
     });
   }
-});
+}
 
-router.delete('/', validator, async (request, response) => {
+async function removeItem(request, response) {
   const { serial } = request.body;
 
   try {
@@ -45,6 +34,6 @@ router.delete('/', validator, async (request, response) => {
       success: false, message: error.message
     });
   }
-});
+}
 
-export default router;
+export { getCart, addItem, removeItem };
