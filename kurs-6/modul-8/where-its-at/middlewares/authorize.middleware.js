@@ -1,4 +1,4 @@
-import { validKey } from '../models/staff.model.js';
+import { isValidKey } from '../models/staff.model.js';
 
 import { validate } from './validate.middleware.js';
 
@@ -9,7 +9,7 @@ async function authorize(request, response, next) {
 
   validate(apiKeySchema)(request, response, async () => {
     try {
-      if (await validKey(apiKey)) {
+      if (await isValidKey(apiKey)) {
         next();
       } else {
         throw new Error('invalid api-key');

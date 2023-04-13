@@ -28,8 +28,8 @@ async function getKey(username, password) {
   return staff.apiKey;
 }
 
-async function validKey(apiKey) {
+async function isValidKey(apiKey) {
   return !!await database.staff.findOne({ apiKey });
 }
 
-export { add, getKey, validKey };
+export { add, getKey, isValidKey };
