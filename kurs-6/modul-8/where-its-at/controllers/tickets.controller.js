@@ -1,7 +1,7 @@
 import * as tickets from '../models/tickets.model.js';
 
 async function buy(request, response) {
-  const { eventID } = request.body;
+  const eventID = Number(request.params.eventID);
 
   try {
     const ticket = await tickets.add(eventID);
