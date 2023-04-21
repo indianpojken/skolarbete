@@ -1,15 +1,10 @@
-import {
-  addUser,
-  getUserByUsername,
-  comparePassword,
-  generateToken,
-} from '../models/users.model.js';
+import * as usersService from '../services/users.service.js';
 
-async function signUp(request, response) {
+async function signup(request, response) {
   const { username, password } = request.body;
 
   try {
-    await addUser(username, password);
+    await usersService.create(username, password);
 
     response.status(201).json({ success: true });
   } catch (error) {
@@ -23,22 +18,13 @@ async function login(request, response) {
   const { username, password } = request.body;
 
   try {
-    const user = await getUserByUsername(username);
+    const user = await usersService.getByUsername(username);
+    const token = await usersService.verify(user, password);
 
-    const passwordMatch = await comparePassword(
-      user.password, password
-    );
-
-    if (passwordMatch) {
-      const token = generateToken(user);
-
-      response
-        .status(200)
-        .cookie('token', token, { httpOnly: true })
-        .json({ success: true });
-    } else {
-      throw new Error('incorrect password');
-    }
+    response
+      .status(200)
+      .cookie('token', token, { httpOnly: true })
+      .json({ success: true });
   } catch (error) {
     response.status(401).json({
       success: false, message: error.message
@@ -46,4 +32,4 @@ async function login(request, response) {
   }
 }
 
-export { signUp, login };
+export { signup, login };

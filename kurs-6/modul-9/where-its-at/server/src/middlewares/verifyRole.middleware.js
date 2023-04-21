@@ -1,11 +1,13 @@
-import { getUserByID, hasRole } from '../models/users.model.js';
+import * as usersService from '../services/users.service.js';
 
 function verifyRole(role) {
   return async (request, response, next) => {
-    try {
-      const user = await getUserByID(request.user._id);
+    const userID = request.user._id;
 
-      if (!hasRole(user, role)) {
+    try {
+      const user = await usersService.get(userID);
+
+      if (!usersService.hasRole(user, role)) {
         throw new Error('required role is missing');
       }
 

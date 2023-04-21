@@ -31,7 +31,7 @@ async function remove(request, response) {
 
 async function events(request, response) {
   response.status(200).json({
-    success: true, events: await getEventByIDs()
+    success: true, events: await getEvents()
   });
 }
 

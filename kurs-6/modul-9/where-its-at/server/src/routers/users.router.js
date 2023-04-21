@@ -9,6 +9,6 @@ import * as usersController from '../controllers/users.controller.js';
 const router = Router();
 
 router.post('/login', validate(userValidator), usersController.login);
-router.post('/signup', validate(userValidator), usersController.signUp);
+router.post('/signup', validate(userValidator), usersController.signup);
 
 export { router as usersRouter };
