@@ -1,6 +1,7 @@
 import {
   isTicketsAvailable,
-  decreaseTickets
+  decreaseTickets,
+  getEventByID
 } from '../models/events.model.js';
 
 import * as ticketsServices from '../services/tickets.service.js';
@@ -19,7 +20,14 @@ async function buy(request, response) {
       await usersService.addTicket(user, ticket.number)
       await decreaseTickets(eventID);
 
-      response.status(201).json({ success: true, ticket });
+      response.status(201).json({
+        success: true,
+        ticket: {
+          ticketNumber: ticket.number,
+          validate: ticket.validated,
+          event: await getEventByID(ticket.eventID),
+        }
+      });
     } else {
       throw new Error('no tickets available');
     }
