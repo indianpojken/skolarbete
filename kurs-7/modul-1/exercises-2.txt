@@ -1,0 +1,63 @@
+1.
+  SELECT artists.Name, albums.Title FROM artists
+  JOIN albums ON artists.ArtistId = albums.ArtistId
+
+2.
+  SELECT artists.Name, albums.Title FROM artists
+  JOIN albums ON artists.ArtistId = albums.ArtistId
+  WHERE albums.title LIKE 'The %'
+
+3.
+  Select artists.Name, tracks.Name from artists
+  JOIN albums ON artists.ArtistId = albums.ArtistId
+  JOIN tracks on albums.AlbumId = tracks.AlbumId
+  WHERE artists.Name = 'Frank Sinatra'
+
+4.
+  Select * from tracks
+  WHERE Composer IS NULL
+
+5.
+  Select * from tracks
+  WHERE GenreId IS NULL
+
+6.
+  SELECT tracks.Name, genres.Name FROM tracks
+  JOIN genres ON tracks.GenreId = genres.GenreId
+  WHERE genres.Name = 'Latin'
+
+7.
+  SELECT albums.Title FROM tracks
+  JOIN albums ON tracks.AlbumId = albums.AlbumId
+  JOIN genres ON tracks.GenreId = genres.GenreId
+  WHERE genres.Name = 'Latin'
+  GROUP BY albums.title
+
+8.
+  SELECT albums.Title FROM tracks
+  JOIN albums ON tracks.AlbumId = albums.AlbumId
+  JOIN genres ON tracks.GenreId = genres.GenreId
+  WHERE genres.Name in ('Jazz', 'Rock')
+  GROUP BY albums.title
+
+9.
+  Select tracks.Name from playlists
+  JOIN playlist_track on playlists.PlaylistId = playlist_track.PlaylistId
+  JOIN tracks on playlist_track.TrackId = tracks.TrackId
+  WHERE playlists.Name = 'Grunge'
+
+10.
+  Select DISTINCT artists.Name from playlists
+  JOIN playlist_track on playlists.PlaylistId = playlist_track.PlaylistId
+  JOIN tracks on playlist_track.TrackId = tracks.TrackId
+  JOIN albums ON tracks.AlbumId = albums.AlbumId
+  JOIN artists on albums.ArtistId = artists.ArtistId
+  WHERE playlists.Name = 'Grunge'
+
+11.
+  Select DISTINCT playlists.Name from playlists
+  JOIN playlist_track on playlists.PlaylistId = playlist_track.PlaylistId
+  JOIN tracks on playlist_track.TrackId = tracks.TrackId
+  JOIN albums ON tracks.AlbumId = albums.AlbumId
+  JOIN artists on albums.ArtistId = artists.ArtistId
+  WHERE artists.Name = 'Led Zeppelin'

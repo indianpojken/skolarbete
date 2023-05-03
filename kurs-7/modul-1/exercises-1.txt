@@ -1,0 +1,71 @@
+2.
+  a) SELECT * FROM albums
+  b) SELECT * FROM albums ORDER BY title ASC
+
+3. SELECT * FROM albums WHERE ArtistId = 58
+
+4.
+  a) SELECT * FROM customers WHERE Country = 'Canada'
+  b) SELECT * FROM customers WHERE Country = 'Canada' ORDER BY LastName ASC
+
+5. SELECT * FROM customers WHERE Company = 'Microsoft Corporation'
+
+6. SELECT * FROM customers WHERE Company IS NULL
+
+7. SELECT * FROM customers WHERE Country IN ('Sweden', 'Spain')
+
+8.
+  a)
+    SELECT COUNT(*) FROM customers
+    WHERE Fax IS NOT NULL
+    AND Country = 'USA'
+  b)
+    SELECT COUNT(*) FROM customers
+    WHERE Fax IS NULL
+    AND Country = 'USA'
+  c)
+    SELECT COUNT(*) FROM customers
+    WHERE Fax IS NOT NULL
+    AND Country = 'USA'
+    AND State = 'CA'
+
+9.
+  SELECT Email FROM customers
+  WHERE Email LIKE 'jack%murray%@%.com'
+  OR Email LIKE 'stan%murray%@%.com'
+
+10.
+  a)
+    SELECT * FROM customers
+    WHERE (
+      PostalCode LIKE '6%'
+      OR PostalCode LIKE '7%'
+      OR PostalCode LIKE '8%'
+      OR PostalCode LIKE '9%'
+    )
+
+  b)
+    SELECT * FROM customers
+    WHERE (
+      PostalCode LIKE '6%'
+      OR PostalCode LIKE '7%'
+      OR PostalCode LIKE '8%'
+      OR PostalCode LIKE '9%'
+    ) AND City = 'Copenhagen'
+
+  c)
+    SELECT * FROM customers
+    WHERE (
+      PostalCode LIKE '6%'
+      OR PostalCode LIKE '7%'
+      OR PostalCode LIKE '8%'
+      OR PostalCode LIKE '9%'
+    ) AND City IN ('Copenhagen', 'Paris')
+
+11.
+  a)
+    SELECT * FROM tracks
+    WHERE UnitPrice != 0.99 -- <>
+  b)
+    SELECT * FROM tracks
+    WHERE Name LIKE 'Go%'
