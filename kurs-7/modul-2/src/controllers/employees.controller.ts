@@ -17,7 +17,7 @@ export const storesEmployees = controller((request, response) => {
   const storeId = Number(request.params.storeId);
   const employees = employeesService.getEmployeesByStoreId(storeId);
 
-  response.status(201).send({
+  response.status(200).send({
     status: 'success',
     data: { employees }
   });

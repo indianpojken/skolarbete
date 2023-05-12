@@ -18,7 +18,6 @@ function validate(validation: z.AnyZodObject) {
       next();
     } catch (error) {
       if (error instanceof z.ZodError) {
-        console.log(error)
         response.status(400).json({
           status: 'fail',
           data: formatZodError(error),

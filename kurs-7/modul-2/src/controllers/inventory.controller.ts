@@ -21,7 +21,7 @@ export const storesInventory = controller((request, response) => {
 
   const inventory = inventoryService.getInventoryByStoreId(storeId);
 
-  response.status(201).send({
+  response.status(200).send({
     status: 'success',
     data: { inventory }
   });
