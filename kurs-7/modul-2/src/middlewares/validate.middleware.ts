@@ -7,7 +7,7 @@ function formatZodError(error: z.ZodError) {
   })
 }
 
-function validate(validation: z.AnyZodObject) {
+export function validate(validation: z.AnyZodObject) {
   return async (
     request: Request,
     response: Response,
@@ -26,5 +26,3 @@ function validate(validation: z.AnyZodObject) {
     }
   }
 }
-
-export { validate };
