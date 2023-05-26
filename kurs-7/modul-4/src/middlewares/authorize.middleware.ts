@@ -19,6 +19,7 @@ export async function authorize(
 
     next();
   } catch (error) {
+    response.clearCookie('token');
     next(new ApiError(401, { message: 'Authorization failed' }));
   }
 }
