@@ -1,9 +1,8 @@
 import { sendResponse } from './sendResponse.mjs';
+import { errorHandler } from './errorHandler.mjs';
 
 export function route(method, path, callback) {
-  const route = { method, path, callback: callback };
-
-  return route;
+  return { method, path, callback: callback };
 }
 
 export async function checkRoutes(routes, event) {
@@ -11,7 +10,9 @@ export async function checkRoutes(routes, event) {
 
   for (const route of routes) {
     if (method === route.method && path === route.path) {
-      return await route.callback(event?.body ? JSON.parse(event?.body) : {});
+      return await errorHandler(async () =>
+        route.callback(event?.body ? JSON.parse(event?.body) : {})
+      );
     }
   }
 
