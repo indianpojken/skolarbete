@@ -21,7 +21,7 @@ const routes = [
 
     return sendResponse(200, {
       status: 'success',
-      data: { encodedText },
+      data: { encoded: encodedText },
     });
   }),
 
@@ -40,7 +40,7 @@ const routes = [
 
     return sendResponse(200, {
       status: 'success',
-      data: { text: decodedText },
+      data: { decoded: decodedText },
     });
   }),
 ];
