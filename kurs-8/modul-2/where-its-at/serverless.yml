@@ -1,0 +1,41 @@
+service: where-its-at
+frameworkVersion: '3'
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-north-1
+  httpApi:
+    cors: true
+  environment:
+    DATABASE: ${env:DATABASE}
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+functions:
+  getEvents:
+    handler: functions/getEvents.handler
+    events:
+      - httpApi:
+          path: /events
+          method: GET
+
+  buyTicket:
+    handler: functions/buyTicket.handler
+    events:
+      - httpApi:
+          path: /tickets/{eventId}
+          method: POST
+
+  verifyTicket:
+    handler: functions/verifyTicket.handler
+    events:
+      - httpApi:
+          path: /staff/verify
+          method: POST

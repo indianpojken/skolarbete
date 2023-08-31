@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "drizzle-kit": "^0.19.13",
+    "serverless-webpack": "^5.13.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.28.5",
+    "nanoid": "^4.0.2",
+    "postgres": "^3.3.5",
+    "zod": "^3.22.2"
+  }
+}

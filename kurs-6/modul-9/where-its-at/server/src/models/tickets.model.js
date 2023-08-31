@@ -1,4 +1,4 @@
-import { customAlphabet } from 'nanoid'
+import { customAlphabet } from 'nanoid';
 
 import { database } from '../database.js';
 
@@ -26,15 +26,12 @@ async function create(eventID) {
   return await database.tickets.insert({
     number: customAlphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 6)(),
     validated: false,
-    eventID,
+    eventId,
   });
 }
 
 async function update(ticket, data) {
-  return await database.tickets.updateOne(
-    { _id: ticket._id },
-    { $set: data }
-  );
+  return await database.tickets.updateOne({ _id: ticket._id }, { $set: data });
 }
 
 export { get, getByNumber, create, update };
