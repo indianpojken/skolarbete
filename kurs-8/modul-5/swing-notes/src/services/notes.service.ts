@@ -81,14 +81,15 @@ export async function findAllNotesByUserId(userId: string) {
   const { Items: notes } = await database
     .query({
       TableName: process.env.TABLE_NAME as string,
-      KeyConditionExpression: 'PK = :userId',
+      KeyConditionExpression: 'PK = :userId AND begins_with(SK, :prefix)',
       ExpressionAttributeValues: {
         ':userId': userId,
+        ':prefix': 'note#',
       },
     })
     .promise();
 
-  return notes?.filter((note) => note.SK !== 'registration') as Note[];
+  return notes as Note[];
 }
 
 export async function deleteNoteById(noteId: string, userId: string) {
