@@ -1,0 +1,38 @@
+@use '../../scss/colors';
+
+.times-up {
+  padding-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__label {
+    color: colors.$white;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0.1em;
+    margin: 1rem 0 1rem 0;
+  }
+
+  &__time-remaining {
+    color: #ffffff99;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+
+  button {
+    margin-top: 3rem;
+  }
+
+  svg {
+    min-width: 85px;
+    min-height: 85px;
+  }
+}

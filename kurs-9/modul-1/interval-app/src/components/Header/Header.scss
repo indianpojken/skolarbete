@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  margin: 12px 12px 0 12px;
+
+  &__label {
+    align-self: center;
+    margin: auto;
+    padding-right: 32px; // fulhack
+
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.1em;
+  }
+}

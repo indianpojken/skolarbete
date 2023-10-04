@@ -1,0 +1,17 @@
+.overlay {
+  position: absolute;
+  background: rgb(57, 57, 57);
+  background: radial-gradient(
+    circle,
+    rgba(57, 57, 57, 1) 80px,
+    rgba(49, 49, 49, 1) 80px,
+    rgba(49, 49, 49, 1) 130px,
+    rgba(42, 42, 42, 1) 130px,
+    rgba(42, 42, 42, 1) 180px,
+    rgba(38, 38, 38, 1) 180px,
+    rgba(38, 38, 38, 1) 230px,
+    rgba(34, 34, 34, 1) 230px,
+    rgba(34, 34, 34, 1) 320px
+  );
+  z-index: 1;
+}
