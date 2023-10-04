@@ -22,7 +22,7 @@ export default function SetTimer() {
     breakTimer.stop();
 
     timer.start({
-      startValues: { seconds: minutes },
+      startValues: { minutes },
       countdown: true,
       precision: 'seconds',
     });
