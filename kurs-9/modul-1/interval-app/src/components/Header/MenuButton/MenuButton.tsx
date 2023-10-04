@@ -1,9 +1,16 @@
 import './MenuButton.scss';
 
-export default function MenuButton() {
+export default function MenuButton({
+  onClick,
+  className,
+}: {
+  onClick: () => void;
+  className?: string;
+}) {
   return (
     <svg
-      className="menu-button"
+      onClick={onClick}
+      className={'menu-button ' + (className ?? '')}
       width="32"
       height="32"
       viewBox="0 0 32 32"

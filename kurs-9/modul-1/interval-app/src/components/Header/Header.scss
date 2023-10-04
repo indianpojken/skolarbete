@@ -1,5 +1,8 @@
+@use '../../scss/colors';
+
 .header {
   display: flex;
+  z-index: 1;
   margin: 12px 12px 0 12px;
 
   &__label {

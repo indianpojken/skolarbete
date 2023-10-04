@@ -1,8 +1,16 @@
 @use '../../../scss/colors';
 
-.menu-button:hover {
-  rect {
-    transition: all 0.1s;
-    fill: colors.$bright-gray;
+.menu-button {
+  &:hover {
+    rect {
+      transition: all 0.1s;
+      fill: colors.$bright-gray;
+    }
+  }
+
+  &--toggled {
+    rect {
+      fill: colors.$white;
+    }
   }
 }

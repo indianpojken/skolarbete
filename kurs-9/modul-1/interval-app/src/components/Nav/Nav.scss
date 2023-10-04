@@ -1,0 +1,40 @@
+@use '../../scss/colors';
+
+.nav {
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: colors.$light-gray;
+
+  &__items {
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    margin: 12px 12px 0 12px;
+  }
+
+  a {
+    transition: all 0.25s;
+    color: colors.$white;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+
+    &:hover {
+      color: colors.$black;
+    }
+  }
+
+  &item--active {
+  }
+}

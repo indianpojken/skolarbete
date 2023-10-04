@@ -20,7 +20,7 @@ export default function Root() {
   });
 
   useEffect(() => {
-    if (isIntervalMode) {
+    if (isIntervalMode && timer.isRunning()) {
       timer.reset();
     }
   }, [isTargetAchieved]);
