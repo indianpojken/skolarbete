@@ -2,6 +2,7 @@
 
 .overlay {
   position: absolute;
+  z-index: 2;
 
   background: radial-gradient(
     circle,

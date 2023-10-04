@@ -11,6 +11,7 @@ export default function Nav({
   const links = [
     { title: 'Interval', to: '/interval' },
     { title: 'Digital', to: '/digital' },
+    { title: 'Analog', to: '/analog' },
   ];
 
   return (

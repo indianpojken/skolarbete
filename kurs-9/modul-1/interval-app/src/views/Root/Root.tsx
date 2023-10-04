@@ -9,7 +9,7 @@ import './Root.scss';
 import Break from '../../components/Break/Break.tsx';
 
 export default function Root() {
-  const [isIntervalMode, setIsIntervalMode] = useState(true);
+  const [isIntervalMode, setIsIntervalMode] = useState(false);
 
   const [timer, isTargetAchieved] = useTimer({
     updateWhenTargetAchieved: true,
