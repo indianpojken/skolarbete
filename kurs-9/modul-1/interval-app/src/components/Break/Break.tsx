@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { redirect } from 'react-router-dom';
 import Timer from 'easytimer.js';
 
@@ -15,12 +14,10 @@ export default function Break({
   breakTimer: Timer;
 }) {
   const onClick = () => {
-    breakTimer.reset();
-    timer.start();
+    timer.reset();
+    breakTimer.stop();
     redirect('/digital');
   };
-
-  useEffect(() => timer.pause(), []);
 
   return (
     <Overlay>
@@ -38,7 +35,7 @@ export default function Break({
 
         <p className="times-up__label">Pause & breath</p>
         <p className="times-up__time-remaining">
-          {formatTime(timer.getTimeValues())}
+          {formatTime(breakTimer.getTimeValues())}
         </p>
         <button className="button button--bright" onClick={onClick}>
           No pause, go now!

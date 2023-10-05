@@ -10,27 +10,53 @@ import Break from '../../components/Break/Break.tsx';
 
 export default function Root() {
   const [isIntervalMode, setIsIntervalMode] = useState(false);
+  const [isBreakMode, setIsBreakMode] = useState(false);
 
   const [timer, isTargetAchieved] = useTimer({
     updateWhenTargetAchieved: true,
   });
 
-  const [breakTimer, breakTimerAchived] = useTimer({
+  const [breakTimer, breakTimerAchieved] = useTimer({
     updateWhenTargetAchieved: true,
   });
 
   useEffect(() => {
     if (isIntervalMode && isTargetAchieved) {
-      timer.reset();
+      if (isBreakMode) {
+        timer.pause();
+
+        breakTimer.start({
+          startValues: { minutes: 5 },
+          countdown: true,
+          precision: 'seconds',
+        });
+      } else {
+        timer.reset();
+      }
     }
   }, [isTargetAchieved]);
+
+  useEffect(() => {
+    if (breakTimerAchieved) {
+      timer.reset();
+    }
+  }, [breakTimerAchieved]);
 
   return (
     <div className="app">
       {isTargetAchieved && <TimesUp timer={timer} />}
-      {breakTimerAchived && <Break timer={timer} breakTimer={breakTimer} />}
+      {breakTimer.isRunning() && (
+        <Break timer={timer} breakTimer={breakTimer} />
+      )}
       <Outlet
-        context={{ timer, breakTimer, isIntervalMode, setIsIntervalMode }}
+        context={{
+          timer,
+          breakTimer,
+          isIntervalMode,
+          setIsIntervalMode,
+          isBreakMode,
+          setIsBreakMode,
+        }}
       />
     </div>
   );

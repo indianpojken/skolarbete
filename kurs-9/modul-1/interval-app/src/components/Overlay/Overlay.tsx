@@ -5,7 +5,7 @@ export default function Overlay({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) {
   return <main className={'overlay ' + (className ?? '')}>{children}</main>;
 }

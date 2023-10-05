@@ -5,4 +5,6 @@ export interface OutletContext {
   breakTimer: Timer;
   isIntervalMode: boolean;
   setIsIntervalMode: React.Dispatch<React.SetStateAction<boolean>>;
+  isBreakMode: boolean;
+  setIsBreakMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
