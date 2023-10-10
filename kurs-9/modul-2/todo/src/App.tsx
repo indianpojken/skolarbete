@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import TodoList from './components/TodoList/TodoList.tsx';
 
 import type { Todo } from './types/types.ts';
-import AddTodoItem from './AddTodoItem/AddTodoItem.tsx';
+
+import TodoList from './components/TodoList/TodoList.tsx';
+import AddTodoItem from './components/AddTodoItem/AddTodoItem.tsx';
 
 export default function App() {
   const [items, setItems] = useState<Todo[]>([
