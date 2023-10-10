@@ -23,6 +23,7 @@ export default function AddTodoItem({ addTodo }: Props) {
       <input
         className="add-todo-item__set-text"
         value={text}
+        placeholder="Add a new task"
         onChange={(event) => setText(event.currentTarget.value)}
       />
       <button type="submit">
