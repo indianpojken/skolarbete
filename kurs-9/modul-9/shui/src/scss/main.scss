@@ -1,0 +1,29 @@
+@use './mixins';
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  box-sizing: content-box;
+
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  background-color: #eee;
+
+  .app {
+    @include mixins.center;
+
+    height: 100%;
+  }
+}

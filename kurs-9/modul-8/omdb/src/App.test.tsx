@@ -4,7 +4,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App.tsx';
 
 describe('App', () => {
-  it('Should display a text before searching', async () => {
+  test('Should display a text before searching', async () => {
     render(<App />);
 
     expect(
@@ -12,7 +12,7 @@ describe('App', () => {
     ).toBeInTheDocument();
   });
 
-  it(`Should find the movie 'Your Highness'`, async () => {
+  test(`Should find the movie 'Your Highness'`, async () => {
     render(<App />);
 
     fireEvent.change(screen.getByRole('textbox'), {
@@ -32,7 +32,7 @@ describe('App', () => {
     );
   });
 
-  it(`Should show no movies`, async () => {
+  test(`Should show no movies`, async () => {
     render(<App />);
 
     fireEvent.change(screen.getByRole('textbox'), {
