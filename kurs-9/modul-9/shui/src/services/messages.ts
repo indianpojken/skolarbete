@@ -1,6 +1,6 @@
-const uri = `https://www.test.website/api`;
-
 import { MessagesResponse } from '@/types/types.ts';
+
+const uri = `https://www.test.website/api`;
 
 export async function getMessages() {
   const endpoint = `${uri}/messages`;
